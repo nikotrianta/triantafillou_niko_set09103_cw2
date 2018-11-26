@@ -13,11 +13,12 @@
                 </h3>
                 <p class="post-meta">Posted at: {{ post.time }} on {{ post.date }}. <a href="/verify">{{ post.verify }}</a>/<a href="/unverify">{{ post.unverify }}</a>?</p>
             </div>
-            <hr> {% endfor %} {% endblock %}
+            <hr> {% endfor %}
             <!-- Pager -->
             <div class="clearfix">
                 <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
             </div>
+            {% endblock %}
         </div>
     </div>
 </div>
