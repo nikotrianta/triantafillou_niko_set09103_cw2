@@ -19,3 +19,7 @@ def index():
 @app.errorhandler(404)
 def page_not_found(error):
 	return render_template('page_not_found.html'), 404
+
+@app.route('/post')
+def page_not_found(error):
+	return render_template('page_not_found.html'), 404
