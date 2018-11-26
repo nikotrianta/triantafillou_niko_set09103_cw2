@@ -10,7 +10,7 @@ def index():
 			'time': '21:00',
 			'date': '26th Semptember',
 			'message': 'Test message'
-			'verify': 'Verify'
+			'verify': 'Verify',
 			'unverify': 'Unverify'
 		}
 	]
