@@ -2,8 +2,17 @@ from . import app
 from flask import render_template
 
 @app.route('/')
+@app.route('/index')
 def index():
-	return render_template('index.html')
+	posts = [
+		{
+			'user': 'Anon',
+			'time': '21:00',
+			'date': '26th Semptember',
+			'message': 'Test message'
+		}
+	]
+	return render_template('index.html', posts=posts)
 
 @app.errorhandler(404)
 def page_not_found(error):
