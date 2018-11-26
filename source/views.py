@@ -1,5 +1,8 @@
 from . import app
 from flask import render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired 
 
 @app.route('/')
 @app.route('/index')
@@ -20,6 +23,12 @@ def index():
 def page_not_found(error):
 	return render_template('page_not_found.html'), 404
 
+class PostForm(FlaskForm):
+    user = StringField('User')
+    message = StringField('Message', validators=[DataRequired()])
+    submit = SubmitField('Sign In')
+
 @app.route('/post')
-def page_not_found(error):
-	return render_template('page_not_found.html'), 404
+def post():
+	form = PostForm()
+	return render_template('post.html', form=form)
