@@ -10,6 +10,7 @@
                 </h2>
                 <h3 class="post-subtitle">
                     <form action="" method="post" novalidate>
+                        {{ form.username.label }}<br> {{ form.username(size=32) }}
                         <input type="text" class="form-control" id="user" placeholder="Your name(optional)">
                         <textarea class="form-control" id="message" rows="3" placeholder="Your message(required)"></textarea>
                     </form>
