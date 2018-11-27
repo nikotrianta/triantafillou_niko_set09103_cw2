@@ -28,7 +28,13 @@ class PostForm(FlaskForm):
     message = StringField('Message', validators=[DataRequired(), Length(min=10, max=100)])
     submit = SubmitField('Submit')
 
-@app.route('/post')
+@app.route('/post', methods=['GET', 'POST'])
 def post():
 	form = PostForm()
+	if form.validate_on_submit():
+		user = User(form.username.data)
+		message = Message(form.message.data)
+		db_session.add(user)
+		flash('Thanks for posting!')
+		return redirect('/index')
 	return render_template('post.html', form=form)
