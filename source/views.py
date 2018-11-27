@@ -25,7 +25,7 @@ def page_not_found(error):
 
 class PostForm(FlaskForm):
     user = StringField('User')
-    message = StringField('Message', validators=[DataRequired()])
+    message = StringField('Message', validators=[DataRequired(), Length(min=10, max=100)])
     submit = SubmitField('Submit')
 
 @app.route('/post')
