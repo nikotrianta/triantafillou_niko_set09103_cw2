@@ -12,7 +12,6 @@
                     <form action="" method="post" novalidate>
                         {{ form.user(class='form-control', id='user', placeholder='Your name (optional)') }}
                         <br> {{ form.message(class='form-control', id='message', placeholder='Your message (required)') }}
-                    </form>
                 </h3>
             </div>
             <hr>
@@ -21,6 +20,7 @@
                 {{ form.submit() }}
                 <a class="btn btn-primary float-right" href="submit">Submit</a>
             </div>
+            </form>
             {% endblock %}
         </div>
     </div>
