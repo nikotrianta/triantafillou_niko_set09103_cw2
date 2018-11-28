@@ -36,6 +36,5 @@ def post():
 		message = Message(form.message.data)
 		db.session.add(user, message)
         db.session.commit()
-		flash('Thanks for posting!')
 		return redirect('/index')
-		return render_template('post.html', form=form)
+	return render_template('post.html', form=form)
