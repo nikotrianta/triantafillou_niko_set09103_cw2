@@ -32,9 +32,10 @@ class PostForm(FlaskForm):
 def post():
 	form = PostForm()
 	if form.validate_on_submit():
-		user = User(form.username.data)
+		user = User(form.user.data) if user is not None else "Anon"
 		message = Message(form.message.data)
-		db_session.add(user)
+		db.session.add(user, message)
+        db.session.commit()
 		flash('Thanks for posting!')
 		return redirect('/index')
 	return render_template('post.html', form=form)
