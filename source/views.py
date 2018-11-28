@@ -35,6 +35,6 @@ def post():
 		user = User(form.user.data) if user is not None else "Anon"
 		message = Message(form.message.data)
 		db.session.add(user, message)
-        db.session.commit()
+		db.session.commit()
 		return redirect('/index')
 	return render_template('post.html', form=form)
