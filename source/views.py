@@ -38,4 +38,4 @@ def post():
         db.session.commit()
 		flash('Thanks for posting!')
 		return redirect('/index')
-	return render_template('post.html', form=form)
+		return render_template('post.html', form=form)
