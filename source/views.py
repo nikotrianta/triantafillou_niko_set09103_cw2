@@ -32,7 +32,7 @@ class PostForm(FlaskForm):
 def post():
 	form = PostForm()
 	if form.validate_on_submit():
-		user = User(form.user.data) if user is not None else "Anon"
+		user = User(form.user.data)
 		message = Message(form.message.data)
 		db.session.add(user, message)
         db.session.commit()
