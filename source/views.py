@@ -30,6 +30,7 @@ class PostForm(FlaskForm):
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():
+	form = PostForm()
 	if form.validate_on_submit():
 		user = User(form.user.data) if user is not None else "Anon"
 		message = Message(form.message.data)
