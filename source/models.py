@@ -24,3 +24,11 @@ def init_db():
         with app.open_resource('schema.sql', mode='r') as f:
             db.cursor().executescript(f.read())
         db.commit()
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user = db.Column(db.String(64), index=True, unique=True)
+    message = db.Column(db.String(120), index=True, unique=True)
+
+    def __repr__(self):
+        return '<User %r>' % (self.nickname)
