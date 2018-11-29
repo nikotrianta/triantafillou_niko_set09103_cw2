@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
 from models import get_db
+import sys
 
 @app.route('/')
 @app.route('/index')
@@ -35,7 +36,7 @@ def post():
 	if form.validate_on_submit():
 		db = get_db()
 		user = User(form.user.data) if user is not None else "Anon"
-		print(user)
+		print(user, file=sys.stdout)
 		message = Message(form.message.data)
 		db.cursor().execute("INSERT INTO post (user,message) VALUES (?,?)",(user,message))
 		db.commit()
