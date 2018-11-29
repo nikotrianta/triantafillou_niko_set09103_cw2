@@ -16,7 +16,7 @@ def index():
 			'user': 'Anon',
 			'time': '21:00',
 			'date': '26th Semptember',
-			'message': 'Test message',
+			'message': 'Wow, this website is so cool!',
 			'verify': 'Verify',
 			'unverify': 'Unverify'
 		}
@@ -42,7 +42,7 @@ def post():
 			# message = Message(form.message.data)
 			# db.cursor().execute("INSERT INTO post (user,message) VALUES (?,?)",(user,message))
 			# db.commit()
-			flash('Thanks for posting!')
+			flash('Thanks for posting, please wait while your message gets approved!')
 			return redirect('/index')
 	return render_template('post.html', form=form)
 
