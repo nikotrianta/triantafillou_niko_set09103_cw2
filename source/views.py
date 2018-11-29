@@ -38,7 +38,7 @@ def post():
 	if request.method == 'POST':
 		if form.validate_on_submit():
 			db = get_db()
-			user = User(form.user.data) if user is not None else "Anon"
+			user = User(form.user.data)
 			print(user, file=sys.stdout)
 			message = Message(form.message.data)
 			db.cursor().execute("INSERT INTO post (user,message) VALUES (?,?)",(user,message))
