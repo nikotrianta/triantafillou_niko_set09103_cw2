@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
 from models import get_db
+from __future__ import print_function
 import sys
 
 @app.route('/')
