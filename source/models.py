@@ -29,12 +29,12 @@ def init_db():
 def post():
 	form = PostForm()
 	if form.validate_on_submit():
-        user = 'AnonUser'
+        #user = 'AnonUser'
         # User(form.user.data) if user is not None else "Anon"
-        message = 'Test message'
+        #message = 'Test message'
         # Message(form.message.data)
         db = get_db()
-        db.cursor().execute('insert into post values ("'user'", "'message'")')
+        db.cursor().execute('insert into post values ("testuser", "testmsg")')
         db.commit()
         flash('Thanks for posting!')
         return redirect('/index')
