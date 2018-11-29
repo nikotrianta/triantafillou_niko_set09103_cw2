@@ -20,14 +20,6 @@ def index():
 			'verify': 'Verify',
 			'unverify': 'Unverify'
 		}
-		{
-			'user': 'Anon',
-			'time': '21:00',
-			'date': '26th Semptember',
-			'message': 'Wow, this website is so cool!',
-			'verify': 'Verify',
-			'unverify': 'Unverify'
-		}
 	]
 	return render_template('index.html', posts=posts)
 
