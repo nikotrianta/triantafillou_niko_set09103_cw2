@@ -39,10 +39,9 @@ def post():
 		if form.validate_on_submit():
 			db = get_db()
 			user = User(form.user.data)
-			print(user, file=sys.stdout)
 			message = Message(form.message.data)
-			db.cursor().execute("INSERT INTO post (user,message) VALUES (?,?)",(user,message))
-			db.commit()
+			# db.cursor().execute("INSERT INTO post (user,message) VALUES (?,?)",(user,message))
+			# db.commit()
 			flash('Thanks for posting!')
 			return redirect('/index')
 	return render_template('post.html', form=form)
