@@ -19,7 +19,8 @@ def index():
 			'message': 'Wow, this website is so cool!',
 			'verify': 'Verify',
 			'unverify': 'Unverify'
-
+		}
+		{
 			'user': 'Anon',
 			'time': '21:00',
 			'date': '26th Semptember',
