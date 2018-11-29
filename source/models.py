@@ -9,6 +9,7 @@ def get_db():
     db = getattr(g, 'db', None)
     if db is None:
         db = sqlite3.connect(db_location)
+        print()=db_location
         g.db = db
     return db
 
