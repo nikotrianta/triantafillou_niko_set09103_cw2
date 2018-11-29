@@ -37,9 +37,9 @@ def post():
 	form = PostForm()
 	if request.method == 'POST':
 		if form.validate_on_submit():
-			db = get_db()
-			user = User(form.user.data)
-			message = Message(form.message.data)
+			# db = get_db()
+			# user = User(form.user.data)
+			# message = Message(form.message.data)
 			# db.cursor().execute("INSERT INTO post (user,message) VALUES (?,?)",(user,message))
 			# db.commit()
 			flash('Thanks for posting!')
