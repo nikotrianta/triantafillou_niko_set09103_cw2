@@ -27,8 +27,8 @@ def init_db():
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():
-	form = PostForm()
-	if form.validate_on_submit():
+    form = PostForm()
+    if form.validate_on_submit():
         #user = 'AnonUser'
         # User(form.user.data) if user is not None else "Anon"
         #message = 'Test message'
