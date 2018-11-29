@@ -3,7 +3,7 @@ from flask import render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
-import models
+from . import models
 
 @app.route('/')
 @app.route('/index')
