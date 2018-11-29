@@ -34,11 +34,9 @@ def post():
 	form = PostForm()
 	if form.validate_on_submit():
 		db = get_db()
-		user = 'AnonUser'
-		# User(form.user.data) if user is not None else "Anon"
-		message = 'Test message'
-		# Message(form.message.data)
-		db.cursor().execute('insert into post values ("UserAnon", "TestUserMessage")')
+		user = User(form.user.data) if user is not None else "Anon"
+		message = Message(form.message.data)
+		db.cursor().execute('INSERT INTO post VALUES("'user'", "'message'")')
 		db.commit()
 		flash('Thanks for posting!')
 		return redirect('/index')
