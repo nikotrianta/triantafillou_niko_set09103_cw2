@@ -11,6 +11,10 @@ import sys
 @app.route('/')
 @app.route('/index')
 def index():
+	db = get_db()
+	db.cursor().execute("SELECT * FROM post")
+	return render_template("index.html", rows=rows)
+
 	posts = [
 		{
 			'user': 'Anon',
@@ -45,4 +49,4 @@ def post():
 			db.commit()
 			flash('Thanks for posting!')
 			return redirect('/index')
-	return render_template('post.html', form=PostForm)
+	return render_template('post.html', form=form)
