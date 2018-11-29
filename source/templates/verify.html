@@ -1,0 +1,18 @@
+{% include "header.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% block content %}
+            <div class="post-preview">
+                <h2 class="post-title">
+                    Verify
+                </h2>
+                <p>Thank you for verifying this post, we will let others know this is an accurate tip!</p>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}

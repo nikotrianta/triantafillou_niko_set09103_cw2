@@ -49,3 +49,11 @@ def post():
 @app.route('/about')
 def about():
 	return render_template('about.html')
+
+@app.route('/verify')
+def verify():
+	return render_template('verify.html')
+
+@app.route('/unverify')
+def unverify():
+	return render_template('unverify.html')
