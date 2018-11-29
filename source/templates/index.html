@@ -12,11 +12,12 @@
             {% endif %} {% endwith %} {% for post in posts %}
             <div class="post-preview">
                 <h2 class="post-title">
-                    {{row["user"]}} Says:
+                    {{ post.user }} Says:
                 </h2>
                 <h3 class="post-subtitle">
-                    {{row["message"]}}
+                    {{ post.message }}
                 </h3>
+                <p class="post-meta">Posted at: {{ post.time }} on {{ post.date }}. <a href="/verify">{{ post.verify }}</a>/<a href="/unverify">{{ post.unverify }}</a>?</p>
             </div>
             <hr> {% endfor %}
             <!-- Pager -->

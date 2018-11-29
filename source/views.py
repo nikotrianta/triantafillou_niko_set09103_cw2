@@ -11,10 +11,6 @@ import sys
 @app.route('/')
 @app.route('/index')
 def index():
-	db = get_db()
-	db.cursor().execute("SELECT * FROM posts")
-	return render_template("index.html", rows=rows)
-
 	posts = [
 		{
 			'user': 'Anon',
