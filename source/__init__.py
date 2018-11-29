@@ -9,4 +9,4 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 #views
-from . import views, models
+from app import views, models
