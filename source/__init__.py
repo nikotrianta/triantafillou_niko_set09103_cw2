@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_object(Config)
 app.config['SECRET_KEY'] = 'any secret string'
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 #views
 from . import views, models
