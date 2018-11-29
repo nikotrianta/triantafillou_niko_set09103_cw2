@@ -1,4 +1,5 @@
 from flask import Flask, g
+from . import db
 import sqlite3
 
 app = Flask(__name__)
