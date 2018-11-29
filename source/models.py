@@ -18,7 +18,7 @@ def close_db_connection(exception):
     if db is not None:
         db.close()
 
-def init.db():
+def init_db():
     with app.app_context():
         db = get_db()
         with app.open_resource('schema.sql', mode='r') as f:
