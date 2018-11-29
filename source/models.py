@@ -24,18 +24,3 @@ def init_db():
         with app.open_resource('schema.sql', mode='r') as f:
             db.cursor().executescript(f.read())
         db.commit()
-
-@app.route('/post', methods=['GET', 'POST'])
-def post():
-    form = PostForm()
-    if form.validate_on_submit():
-        #user = 'AnonUser'
-        # User(form.user.data) if user is not None else "Anon"
-        #message = 'Test message'
-        # Message(form.message.data)
-        db = get_db()
-        db.cursor().execute('insert into post values ("testuser", "testmsg")')
-        db.commit()
-        flash('Thanks for posting!')
-        return redirect('/index')
-    return render_template('post.html', form=form)

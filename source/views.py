@@ -3,6 +3,7 @@ from flask import render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
+import models
 
 @app.route('/')
 @app.route('/index')
@@ -28,16 +29,31 @@ class PostForm(FlaskForm):
     message = StringField('Message', validators=[DataRequired(), Length(min=10, max=100)])
     submit = SubmitField('Submit')
 
+# @app.route('/post', methods=['GET', 'POST'])
+# def post():
+# 	form = PostForm()
+# 	if form.validate_on_submit():
+# 		user = 'AnonUser'
+# 		# User(form.user.data) if user is not None else "Anon"
+# 		message = 'Test message'
+# 		# Message(form.message.data)
+# 		db.session.add(user, message)
+# 		db.session.commit()
+# 		flash('Thanks for posting!')
+# 		return redirect('/index')
+# 	return render_template('post.html', form=form)
+
 @app.route('/post', methods=['GET', 'POST'])
 def post():
-	form = PostForm()
-	if form.validate_on_submit():
-		user = 'AnonUser'
-		# User(form.user.data) if user is not None else "Anon"
-		message = 'Test message'
-		# Message(form.message.data)
-		db.session.add(user, message)
-		db.session.commit()
-		flash('Thanks for posting!')
-		return redirect('/index')
-	return render_template('post.html', form=form)
+    form = PostForm()
+    if form.validate_on_submit():
+        #user = 'AnonUser'
+        # User(form.user.data) if user is not None else "Anon"
+        #message = 'Test message'
+        # Message(form.message.data)
+        db = get_db()
+        db.cursor().execute('insert into post values ("testuser", "testmsg")')
+        db.commit()
+        flash('Thanks for posting!')
+        return redirect('/index')
+    return render_template('post.html', form=form)
