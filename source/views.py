@@ -46,3 +46,7 @@ def post():
 			flash('Thanks for posting!')
 			return redirect('/index')
 	return render_template('post.html', form=form)
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
