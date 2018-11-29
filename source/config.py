@@ -1,5 +1,5 @@
 import os
-from app import app
+import . from app
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
