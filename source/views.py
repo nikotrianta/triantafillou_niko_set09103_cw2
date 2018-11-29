@@ -3,6 +3,7 @@ from flask import render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
+from get_db from db
 
 @app.route('/')
 @app.route('/index')
@@ -32,6 +33,7 @@ class PostForm(FlaskForm):
 def post():
 	form = PostForm()
 	if form.validate_on_submit():
+		db = get_db()
 		user = 'AnonUser'
 		# User(form.user.data) if user is not None else "Anon"
 		message = 'Test message'
