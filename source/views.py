@@ -28,7 +28,7 @@ def page_not_found(error):
 	return render_template('page_not_found.html'), 404
 
 class PostForm(FlaskForm):
-    user = StringField('User')
+    user = StringField('User', validators=[DataRequired()])
     message = StringField('Message', validators=[DataRequired(), Length(min=10, max=100)])
     submit = SubmitField('Submit')
 

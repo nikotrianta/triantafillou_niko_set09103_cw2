@@ -10,7 +10,8 @@
                 </h2>
                 <h3 class="post-subtitle">
                     <form action="" method="post" novalidate>
-                        {{ form.hidden_tag() }} {{ form.user(class='form-control', id='user', placeholder='Your name (optional)') }}
+                        {{ form.hidden_tag() }} {{ form.user(class='form-control', id='user', placeholder='Your name (optional)') }} {% for error in form.user.errors %}
+                        <span style="color: red;">[{{ error }}]</span> {% endfor %}
                         <br> {{ form.message(class='form-control', id='message', placeholder='Your message (required)') }} {% for error in form.message.errors %}
                         <span style="color: red;">[{{ error }}]</span> {% endfor %}
                 </h3>
