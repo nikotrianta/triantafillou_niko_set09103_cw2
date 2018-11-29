@@ -38,7 +38,7 @@ def post():
 		# User(form.user.data) if user is not None else "Anon"
 		message = 'Test message'
 		# Message(form.message.data)
-		db.cursor().execute('insert into post values ("'user'", "'message'")')
+		db.cursor().execute('insert into post values ("UserAnon", "TestUserMessage")')
 		db.commit()
 		flash('Thanks for posting!')
 		return redirect('/index')
