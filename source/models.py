@@ -2,13 +2,12 @@ from flask import Flask, g
 import sqlite3
 
 app = Flask(__name__)
-db_location = 'static/var/sqlite3.db'
+db_location = '/source/static/var/sqlite3.db'
 
 
 def get_db():
     db = getattr(g, 'db', None)
     if db is None:
-        print(db_location)
         db = sqlite3.connect(db_location) 
         g.db = db
     return db
