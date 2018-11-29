@@ -1,9 +1,8 @@
 from . import app
-from flask import render_template
+from flask import render_template, g
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Length
-from flask import Flask, g
 import sqlite3
 
 from flask import Flask
